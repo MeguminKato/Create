@@ -141,7 +141,7 @@ public class RedstoneLinkNetworkHandler {
 	public Map<Couple<Frequency>, Set<IRedstoneLinkable>> networksIn(LevelAccessor world) {
 		if (!connections.containsKey(world)) {
 			Create.LOGGER.warn("Tried to Access unprepared network space of " + WorldHelper.getDimensionID(world));
-			return new HashMap<>();
+			connections.put(world,new HashMap());
 		}
 		return connections.get(world);
 	}
